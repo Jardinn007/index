@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/mr.jpg">
+    <title>Comercial MR AGUIAR</title>
+    <style>
+        body {
+            background-color: orange;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+        }
+        h2 {
+            text-align: center;
+            color: white;
+            
+
+        }
+        nav {
+            text-align: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: orange;
+        }
+        .carousel img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+        .carousel img:hover {
+            transform: scale(1.05);
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            width: 300%;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            width: 33.333%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 30%;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+        .prev { left: 0; }
+        .next { right: 0; }
+        .products {
+            text-align: center;
+            padding: 70px 20;
+            margin: 50px;
+        }
+        .products-lists {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .products-lists ul {
+            list-style-type: none;
+            padding: 0;
+            flex: 1;
+        }
+        .divider {
+            border-left: 4px solid #333;
+            height: 80px;
+            margin: 0 20px;
+        }
+        .dynamic-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px;
+            display: center;
+            top: 93%;
+            left: 44%;
+        }
+        .extra {
+            display: none;
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+        padding: 24px;
+        }
+        footer p:hover {
+            color: orange;
+            transition: color 0.3s ease;
+        }
+        p {
+            text-align: center;
+        }
+        .extra p {
+            text-align: center;
+
+        }
+
+
+        @media (max-width: 768px) {
+            .products-lists {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .products-lists ul {
+                flex: 0 0 30%;
+                margin-bottom: 20px;
+            }
+            .divider {
+                border-left: 4px solid #333;
+                height: 80px;
+                margin: 0 20px;
+                border-top: none;
+                width: auto;
+            }
+            .products-lists .divider:nth-of-type(2) {
+                display: none;
+            }
+            .dynamic-btn {
+                position: static;
+                margin: 20px auto;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .products {
+                padding: 20px 10px;
+                margin: 20px;
+            }
+            footer {
+                padding: 10px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .slides {
+                width: 100%;
+            }
+            .slide {
+                width: 33.333%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Comercial MR AGUIAR</h1>
+    <nav>
+        <a href="index.html">Produtos</a>
+        <a href="about.html">Sobre Nós</a>
+    </nav>
+    <div class="promotions" style="text-align:center; margin: 20px;">
+        <h2>Promoções da semana</h2>
+        <ul style="list-style-type:none; padding:0;">
+
+        </ul>
+    </div>
+    <div class="carousel">
+        <div class="slides" id="slides">
+            <div class="slide"><img src="img/painho.png" alt="painho"><p>R$ 4</p></div>
+            <div class="slide"><img src="img/ovinhos.jpg" alt="Ovos"><p>R$ 16</p></div>
+            <div class="slide"><img src="img/fazenda.png" alt="fazenda"><p>R$ 5</p></div>
+        </div>
+        <button class="prev" onclick="prevSlide()"><</button>
+        <button class="next" onclick="nextSlide()">></button>
+    </div>
+    <div class="products">
+        <h2>Nossos Produtos</h2>
+        <div class="products-lists">
+            <ul>
+                <li>Ovos frescos</li>
+                <li>Arroz premium</li>
+            </ul>
+            <div class="divider"></div>
+            <ul>
+                <li>Açúcar</li>
+                <li>Café</li>
+                <li>Pão</li>
+            </ul>
+            <div class="divider"></div>
+            <ul>
+                <li>Cuscuz caseiro</li>
+                <li>Leite integral</li>
+            </ul>
+        </div>
+        <button class="dynamic-btn" onclick="toggleExtra()">Ver Mais Produtos</button>
+    </div>
+    <div class="extra" id="extra">
+        <p>Mais produtos disponíveis: Açúcar, Café, Pão.</p>
+    </div>
+    <footer>
+        <p>&copy; Venha ao MRAGUIAR.</p>
+        <p>Siga-nos: <a href="https://instagram.com/rubinhoaguiar34" target="_blank">Instagram</a> | <a href="https://wa.me/5598981951886" target="_blank">WhatsApp</a> | <a href="https://facebook.com/mraguiar" target="_blank">Facebook</a></p>
+    </footer>
+    <script>
+        let current = 0;
+        const slides = document.getElementById('slides');
+        function showSlide(n) {
+            current = (n + 3) % 3;
+            const slideWidth = slides.offsetWidth / 3;
+            slides.style.transform = `translateX(-${current * slideWidth}px)`;
+        }
+        function nextSlide() {
+            showSlide(current + 1);
+        }
+        function prevSlide() {
+            showSlide(current - 1);
+        }
+        function toggleExtra() {
+            const extra = document.getElementById('extra');
+            extra.style.display = extra.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
