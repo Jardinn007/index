@@ -200,6 +200,14 @@
             text-align: center;
 
         }
+        .price-square {
+            display: inline-block;
+            border: 2px solid #333;
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
 
 
         @media (max-width: 768px) {
@@ -253,6 +261,7 @@
     <nav>
         <a href="index.html">Produtos</a>
         <a href="about.html">Sobre Nós</a>
+        <a href="historia.html">história</a>
     </nav>
     <div class="promotions" style="text-align:center; margin: 20px;">
         <h2>Promoções da semana</h2>
@@ -262,9 +271,9 @@
     </div>
     <div class="carousel">
         <div class="slides" id="slides">
-            <div class="slide"><img src="img/painho.png" alt="painho"><p>R$ 4</p></div>
-            <div class="slide"><img src="img/ovinhos.jpg" alt="Ovos"><p>R$ 16</p></div>
-            <div class="slide"><img src="img/fazenda.png" alt="fazenda"><p>R$ 5</p></div>
+            <div class="slide"><img src="img/painho.png" alt="painho"><p class="price-square">R$ 4,00</p></div>
+            <div class="slide"><img src="img/ovinhos.jpg" alt="Ovos"><p class="price-square">R$ 16,00</p></div>
+            <div class="slide"><img src="img/fazenda.png" alt="fazenda"><p class="price-square">R$ 5,00</p></div>
         </div>
         <button class="prev" onclick="prevSlide()"><</button>
         <button class="next" onclick="nextSlide()">></button>
